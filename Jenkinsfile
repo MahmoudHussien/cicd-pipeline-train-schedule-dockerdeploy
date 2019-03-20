@@ -1,4 +1,4 @@
-pipeline {
+    pipeline {
     agent any
     stages {
         stage('Build') {
@@ -14,7 +14,7 @@ pipeline {
             }
             steps {
                 script {
-                    app = docker.build("united2019/train-schedule")
+                    app = docker.build("willbla/train-schedule")
                     app.inside {
                         sh 'echo $(curl localhost:8080)'
                     }
